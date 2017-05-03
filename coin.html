@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:black" rel="stylesheet">
+    <style>
+        .coin-container {
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            margin-top: 500px;
+            perspective: 1200;
+            transform-style: preserve-3d;
+            animation: throw 2s infinite;
+        }
+
+        @keyframes throw{
+            50%{
+                margin-top: 0;
+            }
+        }
+        
+        @keyframes roll {
+            50% {
+                transform: rotateX(450deg);
+            }
+        }
+        
+        .coin {
+            height: 140px;
+            width: 140px;
+            border: 30px solid transparent;
+            border-radius: 50%;
+            border-bottom-color: #ffaf24;
+            border-right-color: #ffaf24;
+            border-top-color: #ffbb45;
+            border-left-color: #ffbb45;
+            background: linear-gradient(to bottom right, #dca341 50%, #d69320 50%);
+            display: inline-block;
+            font-family: 'Lato', sans-serif;
+            font-size: 100px;
+            text-align: center;
+            animation: roll 2s infinite;
+            transform: rotateX(90deg);
+            animation-timing-function: linear;
+        }
+        
+        .sign {
+            background: linear-gradient(135deg, #bb7929 50%, #af6104 50%);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: 11px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="coin-container">
+        <span class="coin">
+            <span class="sign">$</span>
+        </span>
+    </div>
+</body>
+
+</html>
