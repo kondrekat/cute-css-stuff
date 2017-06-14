@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: #000;
+        }
+
+        .t-wrapper {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 120px;
+            width: 90px;
+        }
+
+        .horizontal-top-line,
+        .horizontal-bottom-line {
+            border: 2px solid #fff;
+            position: absolute;
+            width: 86px;
+        }
+
+        .horizontal-bottom-line {
+            left: 0;
+            bottom: 0;
+        }
+
+        .large-triangle {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            border: 20px solid #fff;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        .middle-triangle {
+            position: absolute;
+            top: 5px;
+            left: 1px;
+            border: 18px solid #000;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        .small-triangle {
+            position: absolute;
+            top: 11px;
+            left: 6px;
+            border: 8px solid #fff;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        .top-triangle{
+            transform: translate(-10px) scaleX(0.77);
+        }
+
+        .bottom-triangle {
+            position: absolute;
+            left: 90px;
+            bottom: 0;
+            transform: rotate(180deg) scaleX(0.77);
+        }
+        .top-tiny-line{
+            transform: rotate(-52deg) translate(-77px, 23px);
+        }
+        .bottom-tiny-line{   
+             transform: rotate(-52deg) translate(-69px, 36px);
+        }
+        .top-tiny-line .triangle-left, .top-tiny-line .triangle-right, 
+        .bottom-tiny-line .triangle-left, .bottom-tiny-line .triangle-right{
+            border: 8px solid #fff;
+            border-left-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent; 
+            border-top-width: 4px;
+            border-bottom-width: 4px;
+            position: absolute;
+            top: 10px;
+        }
+        .top-tiny-line .triangle-left{
+            right: -46px;
+        }
+        .top-tiny-line .triangle-right{
+            right: -38px;
+        }
+
+        .bottom-tiny-line .triangle-left{
+            right: -38px;
+        }
+
+        .bottom-tiny-line .triangle-right{
+            right: -30px;
+        }
+        .top-tiny-line .left-line, .bottom-tiny-line .left-line{
+            border: 1px solid #fff;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent; 
+            position: absolute;
+            top: 13px;
+            width: 132px;
+        }
+
+        .bottom-tiny-line .left-line{
+            width: 127px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="t-wrapper">
+        <div class="horizontal-top-line"></div>
+        <div class="top-triangle">
+            <div class="large-triangle"></div>
+            <div class="middle-triangle"></div>
+            <div class="small-triangle"></div>
+        </div>
+        <div class="bottom-triangle">
+            <div class="large-triangle"></div>
+            <div class="middle-triangle"></div>
+            <div class="small-triangle"></div>
+        </div>
+        <div class="top-tiny-line">
+            <div class="left-line"></div>
+            <div class="triangle-left"></div>
+            <div class="triangle-right"></div>
+        </div>
+        <div class="bottom-tiny-line">
+            <div class="left-line"></div>
+            <div class="triangle-left"></div>
+            <div class="triangle-right"></div>
+        </div>
+        <div class="horizontal-bottom-line"></div>
+    </div>
+</body>
+
+</html>
