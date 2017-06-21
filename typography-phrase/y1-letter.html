@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: #00283c;
+        }
+
+        .y1-wrapper {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 120px;
+            width: 120px;
+        }
+
+        .large-triangle {
+            border: 80px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 60px;
+            border-left-width: 60px;
+            position: absolute;
+        }
+
+        .middle-triangle {
+            border: 71px solid #00283c;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 54px;
+            border-left-width: 54px;
+            position: absolute;
+            top: 3px;
+            left: 6px;
+        }
+
+        .small-triangle {
+            border: 27px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 18px;
+            border-left-width: 18px;
+            position: absolute;
+            top: 21px;
+            left: 43px;
+        }
+
+        .vertical-block-1 {
+            position: absolute;
+            bottom: 0;
+            left: 43px;
+        }
+
+        .vertical-block-2 {
+            position: absolute;
+            bottom: 0;
+            left: 63px;
+        }
+
+        .triangle-top,
+        .triangle-bottom {
+            border: 14px solid #d61800;
+            border-top-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 7px;
+            border-left-width: 7px;
+            position: absolute;
+        }
+
+        .triangle-top {
+            bottom: 14px;
+        }
+
+        .triangle-bottom {
+            bottom: 0;
+        }
+
+        .line {
+            border: 1px solid #d61800;
+            position: absolute;
+            bottom: 20px;
+            left: 6px;
+            height: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="y1-wrapper">
+        <div class="large-triangle"></div>
+        <div class="middle-triangle"></div>
+        <div class="small-triangle"></div>
+        <div class="vertical-block-1">
+            <div class="triangle-top"></div>
+            <div class="triangle-bottom"></div>
+            <div class="line"></div>
+        </div>
+        <div class="vertical-block-2">
+            <div class="triangle-top"></div>
+            <div class="triangle-bottom"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
