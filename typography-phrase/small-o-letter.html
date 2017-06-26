@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: #000;
+        }
+
+        .o-wrapper {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 120px;
+            width: 120px;
+        }
+
+        .main-circle {
+            background: #000;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            height: 112px;
+            width: 112px;
+        }
+
+        .inner-circle {
+            background: #000;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            height: 104px;
+            width: 104px;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+        }
+
+        .vertical-right-line .line,
+        .vertical-left-line .line {
+            border: 1px solid #fff;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: 28px;
+            left: 12px;
+            height: 64px;
+        }
+
+        .vertical-right-line .triangle-top,
+        .vertical-right-line .triangle-bottom,
+        .vertical-left-line .triangle-top,
+        .vertical-left-line .triangle-bottom {
+            border: 16px solid #fff;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 8px;
+            border-left-width: 8px;
+            position: absolute;
+            top: 6px;
+            left: 4px;
+        }
+
+        .vertical-right-line .triangle-bottom,
+        .vertical-left-line .triangle-bottom {
+            top: 14px;
+        }
+
+        .vertical-right-line .circle,
+        .vertical-left-line .circle {
+            position: absolute;
+            top: 0;
+            left: 9px;
+            width: 2px;
+            height: 2px;
+            border: 2px transparent solid;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .vertical-right-line {
+            position: absolute;
+            top: 6px;
+            right: 45px;
+        }
+
+        .vertical-left-line {
+            position: absolute;
+            top: 6px;
+            left: 20px;
+        }
+
+        .center-circle {
+            position: absolute;
+            bottom: 9px;
+            left: 43px;
+            width: 2px;
+            height: 2px;
+            border: 9px transparent solid;
+            border-radius: 50%;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="o-wrapper">
+        <div class="main-circle"></div>
+        <div class="inner-circle">
+            <div class="vertical-right-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="vertical-left-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="center-circle"></div>
+        </div>
+    </div>
+</body>
+
+</html>
