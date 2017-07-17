@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: #00283c;
+        }
+        
+        .o-wrapper {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 120px;
+            width: 120px;
+        }
+        
+        .main-circle {
+            background: transparent;
+            border: 4px solid #d61800;
+            border-radius: 50%;
+            border-right-color: transparent;
+            height: 112px;
+            width: 112px;
+            transform: rotate(-20deg);
+        }
+        
+        .middle-circle {
+            background: transparent;
+            border: 2px solid #d61800;
+            border-radius: 50%;
+            height: 52px;
+            width: 52px;
+            position: absolute;
+            top: 33px;
+            left: 33px;
+        }
+        
+        .small-circle {
+            background: #d61800;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            border-right-color: transparent;
+            height: 27px;
+            width: 27px;
+            position: absolute;
+            top: 47px;
+            left: 46px;
+        }
+        
+        .triangle-left,
+        .triangle-right {
+            border: 12px solid #d61800;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 7px;
+            border-bottom-width: 7px;
+            position: absolute;
+            left: 0;
+        }
+        
+        .triangle-right {
+            left: 10px;
+        }
+        
+        .line {
+            border: 1px solid #d61800;
+            position: absolute;
+            left: 21px;
+            top: 6px;
+            width: 103px;
+        }
+        
+        .horizontal-block-1,
+        .horizontal-block-2 {
+            position: absolute;
+            top: 77px;
+            z-index: 10;
+            transform: scale(-1);
+            left: 120px;
+        }
+        
+        .horizontal-block-2 {
+            top: 59px;
+        }
+        
+        .dark-line {
+            height: 17px;
+            width: 60px;
+            background: #00283c;
+            position: absolute;
+            top: 52px;
+            left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="o-wrapper">
+        <div class="main-circle"></div>
+        <div class="middle-circle"></div>
+        <div class="horizontal-block-1">
+            <div class="triangle-left"></div>
+            <div class="triangle-right"></div>
+            <div class="line"></div>
+        </div>
+        <div class="dark-line"></div>
+        <div class="horizontal-block-2">
+            <div class="triangle-left"></div>
+            <div class="triangle-right"></div>
+            <div class="line"></div>
+        </div>
+        <div class="small-circle"></div>
+    </div>
+</body>
+
+</html>
