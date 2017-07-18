@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: #00283c;
+        }
+        
+        .g-wrapper {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 120px;
+            width: 120px;
+        }
+        
+        .main-circle,
+        .second-main-circle {
+            background: transparent;
+            border: 4px solid #d3d1d2;
+            border-radius: 50%;
+            border-right-color: transparent;
+            height: 112px;
+            width: 112px;
+            transform: rotate(-20deg);
+        }
+        
+        .second-main-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(-41deg);
+        }
+        
+        .middle-circle {
+            background: transparent;
+            border: 2px solid #d3d1d2;
+            border-radius: 50%;
+            border-right-color: transparent;
+            height: 92px;
+            width: 92px;
+            transform: rotate(-23deg);
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+        
+        .small-circle {
+            background: #d3d1d2;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            height: 62px;
+            width: 62px;
+            position: absolute;
+            top: 28px;
+            left: 28px;
+        }
+        
+        .dark-rect {
+            height: 49px;
+            width: 65px;
+            position: absolute;
+            background: #00283c;
+            top: -1px;
+            left: -1px;
+        }
+        
+        .vertical-top-line {
+            border: 2px solid #d3d1d2;
+            height: 30px;
+            position: absolute;
+            right: 32px;
+            top: 0;
+        }
+        
+        .vertical-bottom-line {
+            border: 2px solid #d3d1d2;
+            height: 9px;
+            position: absolute;
+            right: 49px;
+            top: 58px;
+            z-index: 10;
+        }
+        
+        .horizontal-line {
+            position: absolute;
+            right: 0;
+            top: 64px;
+            border: 1px solid transparent;
+            border-top-color: #d3d1d2;
+            width: 50px;
+            z-index: 10;
+        }
+        
+        .vertical-tiny-line {
+            position: absolute;
+            top: 46px;
+            left: 38px;
+        }
+        
+        .vertical-tiny-line .top-line,
+        .vertical-tiny-line .bottom-line {
+            border: 1px solid #d3d1d2;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            height: 34px;
+        }
+        
+        .vertical-tiny-line .top-line {
+            bottom: 3px;
+            height: 23px;
+        }
+        
+        .vertical-tiny-line .triangle-top,
+        .vertical-tiny-line .triangle-bottom {
+            border: 8px solid #d3d1d2;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 4px;
+            border-left-width: 4px;
+            position: absolute;
+            left: -4px;
+        }
+        
+        .vertical-tiny-line .triangle-top {
+            top: 8px;
+        }
+        
+        .vertical-tiny-line .circle {
+            position: absolute;
+            top: -6px;
+            left: -2px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d3d1d2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="g-wrapper">
+        <div class="main-circle"></div>
+        <div class="vertical-top-line"></div>
+        <div class="vertical-bottom-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="second-main-circle"></div>
+        <div class="middle-circle"></div>
+        <div class="small-circle">
+            <div class="dark-rect"></div>
+        </div>
+        <div class="vertical-tiny-line">
+            <div class="top-line"></div>
+            <div class="circle"></div>
+            <div class="triangle-top"></div>
+            <div class="triangle-bottom"></div>
+            <div class="bottom-line"></div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
