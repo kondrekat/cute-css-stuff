@@ -4,103 +4,116 @@
 <head>
     <style>
         body {
-            background: #00283c;
+            background: white;
+            display: flex;
+            justify-content: space-around;
         }
         
-        .g-wrapper {
+        .main-wrapper {
+            width: 707px;
+            height: calc(707px*1.4142);
+            background: #00283c;
+            border: 1px dashed red;
+            position: relative;
+        }
+        
+        .large-g-wrapper {
             position: absolute;
-            top: 100px;
-            left: 100px;
+            top: 392px;
+            left: 290px;
             height: 120px;
             width: 120px;
+            transform: scale(5.9);
         }
         
-        .main-circle,
-        .second-main-circle {
+        .large-g-wrapper .main-circle,
+        .large-g-wrapper .second-main-circle {
             background: transparent;
             border: 4px solid #d3d1d2;
             border-radius: 50%;
             border-right-color: transparent;
-            height: 112px;
-            width: 112px;
+            height: 113px;
+            width: 113px;
             transform: rotate(-20deg);
         }
         
-        .second-main-circle {
+        .large-g-wrapper .second-main-circle {
             position: absolute;
             top: 0;
             left: 0;
-            transform: rotate(-41deg);
+            transform: rotate(-44deg);
         }
         
-        .middle-circle {
+        .large-g-wrapper .middle-circle {
             background: transparent;
-            border: 2px solid #d3d1d2;
+            border: 1px solid #d3d1d2;
             border-radius: 50%;
             border-right-color: transparent;
-            height: 92px;
-            width: 92px;
+            height: 98px;
+            width: 98px;
             transform: rotate(-23deg);
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 11px;
+            left: 11px;
+            z-index: 11;
         }
         
-        .small-circle {
+        .large-g-wrapper .small-circle {
             background: #d3d1d2;
             border: 1px solid transparent;
             border-radius: 50%;
-            height: 62px;
-            width: 62px;
+            height: 77px;
+            width: 78px;
             position: absolute;
-            top: 28px;
-            left: 28px;
+            top: 22px;
+            left: 21px;
         }
         
-        .dark-rect {
-            height: 49px;
-            width: 65px;
+        .large-g-wrapper .dark-rect {
+            height: 54px;
+            width: 82px;
             position: absolute;
             background: #00283c;
             top: -1px;
             left: -1px;
         }
         
-        .vertical-top-line {
+        .large-g-wrapper .vertical-top-line {
             border: 2px solid #d3d1d2;
-            height: 30px;
+            height: 26px;
             position: absolute;
             right: 32px;
-            top: 0;
+            top: -1px;
+            z-index: 11;
         }
         
-        .vertical-bottom-line {
+        .large-g-wrapper .vertical-bottom-line {
             border: 2px solid #d3d1d2;
-            height: 9px;
+            height: 8px;
             position: absolute;
-            right: 49px;
-            top: 58px;
+            right: 54px;
+            top: 57px;
             z-index: 10;
         }
         
-        .horizontal-line {
+        .large-g-wrapper .horizontal-line {
             position: absolute;
             right: 0;
-            top: 64px;
+            top: 62px;
             border: 1px solid transparent;
             border-top-color: #d3d1d2;
-            width: 50px;
+            width: 55px;
             z-index: 10;
         }
         
-        .vertical-tiny-line {
+        .large-g-wrapper .vertical-tiny-line {
             position: absolute;
-            top: 46px;
-            left: 38px;
+            top: 43px;
+            left: 28px;
         }
         
-        .vertical-tiny-line .top-line,
-        .vertical-tiny-line .bottom-line {
+        .large-g-wrapper .vertical-tiny-line .top-line,
+        .large-g-wrapper .vertical-tiny-line .bottom-line {
             border: 1px solid #d3d1d2;
             border-top-color: transparent;
             border-right-color: transparent;
@@ -109,13 +122,13 @@
             height: 34px;
         }
         
-        .vertical-tiny-line .top-line {
+        .large-g-wrapper .vertical-tiny-line .top-line {
             bottom: 3px;
-            height: 23px;
+            height: 15px;
         }
         
-        .vertical-tiny-line .triangle-top,
-        .vertical-tiny-line .triangle-bottom {
+        .large-g-wrapper .vertical-tiny-line .triangle-top,
+        .large-g-wrapper .vertical-tiny-line .triangle-bottom {
             border: 8px solid #d3d1d2;
             border-bottom-width: 0;
             border-right-color: transparent;
@@ -126,11 +139,11 @@
             left: -4px;
         }
         
-        .vertical-tiny-line .triangle-top {
-            top: 8px;
+        .large-g-wrapper .vertical-tiny-line .triangle-top {
+            top: 7px;
         }
         
-        .vertical-tiny-line .circle {
+        .large-g-wrapper .vertical-tiny-line .circle {
             position: absolute;
             top: -6px;
             left: -2px;
@@ -140,28 +153,2137 @@
             border-radius: 50%;
             background: #d3d1d2;
         }
+        
+        .t-wrapper {
+            position: absolute;
+            top: 290px;
+            left: 59px;
+            height: 120px;
+            width: 90px;
+            transform: scale(1.37);
+        }
+        
+        .t-wrapper .horizontal-line {
+            border: 2px solid #d61800;
+            position: absolute;
+            width: 93px;
+            left: -8px;
+        }
+        
+        .t-wrapper .small-left-line,
+        .t-wrapper .small-right-line {
+            position: absolute;
+            height: 23px;
+            border: 2px solid #d61800;
+            left: -10px;
+        }
+        
+        .t-wrapper .small-right-line {
+            left: auto;
+            right: 0;
+        }
+        
+        .t-wrapper .horizontal-bottom-line {
+            border: 2px solid #d61800;
+            position: absolute;
+            width: 26px;
+            bottom: 0;
+            left: 30px;
+        }
+        
+        .t-wrapper .vertical-bold-line {
+            position: absolute;
+            height: 116px;
+            border: 2px solid #d61800;
+            left: 36px;
+        }
+        
+        .t-wrapper .horizontal-tiny-line .triangle-left,
+        .t-wrapper .horizontal-tiny-line .triangle-right {
+            border: 8px solid #d61800;
+            border-left-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 4px;
+            border-bottom-width: 4px;
+            position: absolute;
+            top: 10px;
+        }
+        
+        .t-wrapper .horizontal-tiny-line .triangle-left {
+            left: 3px;
+        }
+        
+        .t-wrapper .horizontal-tiny-line .triangle-right {
+            left: 10px;
+        }
+        
+        .t-wrapper .horizontal-tiny-line .circle {
+            position: absolute;
+            top: 12px;
+            left: 22px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d61800;
+        }
+        
+        .t-wrapper .horizontal-tiny-line .left-line,
+        .t-wrapper .horizontal-tiny-line .right-line {
+            border: 1px solid #d61800;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: 13px;
+            width: 9px;
+            left: -7px;
+        }
+        
+        .t-wrapper .horizontal-tiny-line .right-line {
+            left: 30px;
+        }
+        
+        .t-wrapper .horizontal-tiny-line {
+            top: -5px;
+            position: absolute;
+        }
+        
+        .t-wrapper .vertical-tiny-line {
+            position: absolute;
+            left: 50px;
+            bottom: 0;
+            top: 0;
+        }
+        
+        .t-wrapper .vertical-tiny-line .line {
+            border: 1px solid #d61800;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            bottom: 0;
+            height: 54px;
+        }
+        
+        .t-wrapper .vertical-tiny-line .triangle-top,
+        .t-wrapper .vertical-tiny-line .triangle-bottom {
+            border: 8px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 4px;
+            border-left-width: 4px;
+            position: absolute;
+            top: 60px;
+            left: -4px;
+        }
+        
+        .t-wrapper .vertical-tiny-line .triangle-top {
+            top: 52px;
+        }
+        
+        .t-wrapper .vertical-tiny-line .circle {
+            position: absolute;
+            top: 46px;
+            left: -2px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d61800;
+        }
+        
+        .t-wrapper .large-triangle {
+            position: absolute;
+            top: 8px;
+            left: 50px;
+            border: 15px solid #d61800;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .t-wrapper .middle-triangle {
+            position: absolute;
+            top: 9px;
+            left: 51px;
+            border: 13px solid #00283c;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .t-wrapper .small-triangle {
+            position: absolute;
+            top: 13px;
+            left: 55px;
+            border: 6px solid #d61800;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .t-wrapper .dark-line {
+            background: #00283c;
+            height: 5px;
+            width: 40px;
+            position: absolute;
+            top: 4px;
+            left: -6px;
+            z-index: -1;
+        }
+        
+        .t-wrapper .dark-rect {
+            background: #00283c;
+            height: 38px;
+            width: 38px;
+            position: absolute;
+            right: 12px;
+            top: 4px;
+        }
+        
+        .y1-wrapper {
+            position: absolute;
+            top: 290px;
+            left: 203px;
+            height: 120px;
+            width: 120px;
+            transform: scale(1.37);
+        }
+        
+        .y1-wrapper .large-triangle {
+            border: 72px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 55px;
+            border-left-width: 55px;
+            position: absolute;
+        }
+        
+        .y1-wrapper .middle-triangle {
+            border: 62px solid #00283c;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 48px;
+            border-left-width: 48px;
+            position: absolute;
+            top: 3px;
+            left: 7px;
+        }
+        
+        .y1-wrapper .small-triangle {
+            border: 25px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 18px;
+            border-left-width: 18px;
+            position: absolute;
+            top: 18px;
+            left: 37px;
+        }
+        
+        .y1-wrapper .vertical-block-1 {
+            position: absolute;
+            bottom: 0;
+            left: 38px;
+        }
+        
+        .y1-wrapper .vertical-block-2 {
+            position: absolute;
+            bottom: 0;
+            left: 57px;
+        }
+        
+        .y1-wrapper .triangle-top,
+        .y1-wrapper .triangle-bottom {
+            border: 14px solid #d61800;
+            border-top-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 7px;
+            border-left-width: 7px;
+            position: absolute;
+        }
+        
+        .y1-wrapper .triangle-top {
+            bottom: 14px;
+        }
+        
+        .y1-wrapper .triangle-bottom {
+            bottom: 0;
+        }
+        
+        .y1-wrapper .line {
+            border: 1px solid #d61800;
+            position: absolute;
+            bottom: 20px;
+            left: 6px;
+            height: 40px;
+        }
+        
+        .p-wrapper {
+            position: absolute;
+            top: 290px;
+            left: 369px;
+            height: 120px;
+            width: 90px;
+            transform: scale(1.37);
+        }
+        
+        .p-wrapper .vertical-white-line {
+            border: 2px solid #d61800;
+            position: absolute;
+            height: 116px;
+            left: 3px;
+        }
+        
+        .p-wrapper .vertical-black-line {
+            border: 3px solid #00283c;
+            position: absolute;
+            height: 112px;
+            left: 7px;
+            top: 4px;
+        }
+        
+        .p-wrapper .big-circle,
+        .small-r-wrapper .big-circle,
+        .r-wrapper .big-circle {
+            border: 4px solid #d61800;
+            border-radius: 50%;
+            height: 77px;
+            width: 79px;
+            position: absolute;
+            left: 3px;
+            background: #00283c;
+        }
+        
+        .p-wrapper .middle-circle,
+        .small-r-wrapper .middle-circle,
+        .r-wrapper .middle-circle {
+            border: 1px solid #d61800;
+            border-radius: 50%;
+            height: 63px;
+            width: 64px;
+            position: absolute;
+            left: 6px;
+            top: 5px;
+        }
+        
+        .p-wrapper .big-triangle,
+        .small-r-wrapper .big-triangle,
+        .r-wrapper .big-triangle {
+            border: 29px solid #d61800;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 19px;
+            border-bottom-width: 19px;
+            position: absolute;
+            top: 12px;
+            left: 7px;
+        }
+        
+        .p-wrapper .small-triangle,
+        .small-r-wrapper .small-triangle,
+        .r-wrapper .small-triangle {
+            border: 28px solid #00283c;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 18px;
+            border-bottom-width: 18px;
+            position: absolute;
+            top: 13px;
+            left: 7px;
+        }
+        
+        .p-wrapper .smallest-triangle {
+            border: 20px solid #d61800;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 13px;
+            border-bottom-width: 13px;
+            position: absolute;
+            top: 18px;
+            left: 7px;
+        }
+        
+        .p-wrapper .horizontal-tiny-line .triangle-left,
+        .p-wrapper .horizontal-tiny-line .triangle-right,
+        .small-r-wrapper .horizontal-tiny-line .triangle-right,
+        .r-wrapper .horizontal-tiny-line .triangle-right,
+        .small-r-wrapper .horizontal-tiny-line .triangle-left,
+        .r-wrapper .horizontal-tiny-line .triangle-left {
+            border: 8px solid #d61800;
+            border-left-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 4px;
+            border-bottom-width: 4px;
+            position: absolute;
+            top: 10px;
+        }
+        
+        .p-wrapper .horizontal-tiny-line .triangle-left,
+        .small-r-wrapper .horizontal-tiny-line .triangle-left,
+        .r-wrapper .horizontal-tiny-line .triangle-left {
+            left: 8px;
+        }
+        
+        .p-wrapper .horizontal-tiny-line .triangle-right,
+        .small-r-wrapper .horizontal-tiny-line .triangle-right,
+        .r-wrapper .horizontal-tiny-line .triangle-right {
+            left: 16px;
+        }
+        
+        .p-wrapper .horizontal-tiny-line .circle,
+        .small-r-wrapper .horizontal-tiny-line .circle,
+        .r-wrapper .horizontal-tiny-line .circle {
+            position: absolute;
+            top: 12px;
+            left: 25px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d61800;
+        }
+        
+        .p-wrapper .horizontal-tiny-line .left-line,
+        .small-r-wrapper .horizontal-tiny-line .left-line,
+        .r-wrapper .horizontal-tiny-line .left-line {
+            border: 1px solid #d61800;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: 13px;
+            width: 8px;
+            left: 2px;
+        }
+        
+        .p-wrapper .horizontal-tiny-line .right-line,
+        .small-r-wrapper .horizontal-tiny-line .right-line,
+        .r-wrapper .horizontal-tiny-line .right-line {
+            left: 30px;
+        }
+        
+        .p-wrapper .horizontal-tiny-line,
+        .small-r-wrapper .horizontal-tiny-line,
+        .r-wrapper .horizontal-tiny-line {
+            position: absolute;
+            top: 17px;
+            left: 32px;
+        }
+        
+        .p-wrapper .horizontal-left-bottom-line,
+        .p-wrapper .horizontal-left-top-line {
+            border: 2px solid #d61800;
+            position: absolute;
+            width: 24px;
+            bottom: 0;
+            left: -5px;
+        }
+        
+        .p-wrapper .horizontal-left-top-line {
+            bottom: auto;
+        }
+        
+        .p-wrapper .vertical-tiny-line .triangle-top,
+        .p-wrapper .vertical-tiny-line .triangle-bottom {
+            border: 8px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 4px;
+            border-left-width: 4px;
+            position: absolute;
+            top: 10px;
+            left: 4px;
+        }
+        
+        .p-wrapper .vertical-tiny-line .triangle-bottom {
+            top: 18px;
+        }
+        
+        .p-wrapper .vertical-tiny-line .line {
+            border: 1px solid #d61800;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: -69px;
+            left: 8px;
+            height: 111px;
+        }
+        
+        .p-wrapper .vertical-tiny-line .circle {
+            position: absolute;
+            top: 4px;
+            left: 6px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d61800;
+        }
+        
+        .p-wrapper .vertical-tiny-line {
+            position: absolute;
+            top: 73px;
+            left: 5px;
+        }
+        
+        .p-wrapper .dark-rect,
+        .small-r-wrapper .dark-rect,
+        .r-wrapper .dark-rect {
+            position: absolute;
+            top: 17px;
+            left: 7px;
+            background: #00283c;
+            height: 40px;
+            width: 6px;
+            z-index: 11;
+        }
+        
+        .o-wrapper {
+            position: absolute;
+            top: 290px;
+            left: 514px;
+            height: 127px;
+            width: 127px;
+            transform: scale(1.37);
+            background: #000;
+            border: 1px solid transparent;
+            border-radius: 50%;
+        }
+        
+        .o-wrapper .white-line {
+            width: 105px;
+            position: absolute;
+            top: 76px;
+            left: 10px;
+            height: 1px;
+            background: #fff;
+        }
+        
+        .o-wrapper .text {
+            font-size: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            position: absolute;
+            top: 82px;
+            left: 28px;
+            letter-spacing: 6px;
+        }
+        
+        .z-wrapper {
+            position: absolute;
+            top: -3px;
+            left: -26px;
+            height: 120px;
+            width: 90px;
+            transform: scale(0.24);
+        }
+        
+        .z-wrapper .horizontal-top-line,
+        .z-wrapper .horizontal-bottom-line {
+            border: 2px solid #fff;
+            position: absolute;
+            width: 86px;
+        }
+        
+        .z-wrapper .horizontal-bottom-line {
+            left: 0;
+            bottom: 0;
+        }
+        
+        .z-wrapper .large-triangle {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            border: 20px solid #fff;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .z-wrapper .middle-triangle {
+            position: absolute;
+            top: 5px;
+            left: 1px;
+            border: 18px solid #000;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .z-wrapper .small-triangle {
+            position: absolute;
+            top: 11px;
+            left: 6px;
+            border: 8px solid #fff;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .z-wrapper .top-triangle {
+            transform: translate(-10px) scaleX(0.77);
+        }
+        
+        .z-wrapper .bottom-triangle {
+            position: absolute;
+            left: 90px;
+            bottom: 0;
+            transform: rotate(180deg) scaleX(0.77);
+        }
+        
+        .z-wrapper .top-tiny-line {
+            transform: rotate(-52deg) translate(-77px, 23px);
+        }
+        
+        .z-wrapper .bottom-tiny-line {
+            transform: rotate(-52deg) translate(-69px, 36px);
+        }
+        
+        .z-wrapper .top-tiny-line .triangle-left,
+        .z-wrapper .top-tiny-line .triangle-right,
+        .z-wrapper .bottom-tiny-line .triangle-left,
+        .z-wrapper .bottom-tiny-line .triangle-right {
+            border: 8px solid #fff;
+            border-left-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 4px;
+            border-bottom-width: 4px;
+            position: absolute;
+            top: 10px;
+        }
+        
+        .z-wrapper .top-tiny-line .triangle-left {
+            right: -46px;
+        }
+        
+        .z-wrapper .top-tiny-line .triangle-right {
+            right: -38px;
+        }
+        
+        .z-wrapper .bottom-tiny-line .triangle-left {
+            right: -38px;
+        }
+        
+        .z-wrapper .bottom-tiny-line .triangle-right {
+            right: -30px;
+        }
+        
+        .z-wrapper .top-tiny-line .left-line,
+        .z-wrapper .bottom-tiny-line .left-line {
+            border: 1px solid #fff;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: 13px;
+            width: 132px;
+        }
+        
+        .z-wrapper .bottom-tiny-line .left-line {
+            width: 127px;
+        }
+        
+        .e-wrapper {
+            position: absolute;
+            top: -3px;
+            left: 3px;
+            height: 120px;
+            width: 90px;
+            transform: scale(0.24);
+        }
+        
+        .e-wrapper .horizontal-top-line,
+        .e-wrapper .horizontal-bottom-line {
+            border: 2px solid #fff;
+            position: absolute;
+            width: 86px;
+        }
+        
+        .e-wrapper .horizontal-bottom-line {
+            left: 0;
+            bottom: 0;
+        }
+        
+        .e-wrapper .vertical-line {
+            border: 2px solid #fff;
+            position: absolute;
+            height: 116px;
+            left: 3px;
+        }
+        
+        .e-wrapper .large-triangle {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            border: 20px solid #fff;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .e-wrapper .middle-triangle {
+            position: absolute;
+            top: 3px;
+            left: 1px;
+            border: 18px solid #000;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .e-wrapper .small-triangle {
+            position: absolute;
+            top: 9px;
+            left: 6px;
+            border: 8px solid #fff;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .e-wrapper .top-triangle {
+            transform: translate(50px) scaleX(2) scaleY(1.4);
+        }
+        
+        .e-wrapper .bottom-triangle {
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            transform: translate(1px) scaleX(2) scaleY(1.4) rotate(270deg);
+        }
+        
+        .e-wrapper .small-top-line,
+        .e-wrapper .small-bottom-line,
+        .e-wrapper .small-middle-line {
+            position: absolute;
+            height: 25px;
+            border: 2px solid #fff;
+            right: 0;
+        }
+        
+        .e-wrapper .small-bottom-line {
+            bottom: 0;
+        }
+        
+        .e-wrapper .small-middle-line {
+            top: 46px;
+            right: 20px;
+        }
+        
+        .e-wrapper .middle-line {
+            border: 1px solid #fff;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: 60px;
+            left: 3px;
+            width: 63px;
+        }
+        
+        .small-r-wrapper {
+            position: absolute;
+            top: -3px;
+            left: 31px;
+            height: 120px;
+            width: 90px;
+            transform: scale(0.24);
+        }
+        
+        .small-r-wrapper .vertical-white-line {
+            border: 2px solid #fff;
+            position: absolute;
+            height: 116px;
+            left: 3px;
+        }
+        
+        .small-r-wrapper .vertical-black-line {
+            border: 3px solid #000;
+            position: absolute;
+            height: 112px;
+            left: 7px;
+            top: 4px;
+        }
+        
+        .small-r-wrapper .big-circle,
+        .small-r-wrapper .middle-circle,
+        .small-r-wrapper .big-triangle,
+        .small-r-wrapper .horizontal-tiny-line .triangle-left,
+        .small-r-wrapper .horizontal-tiny-line .triangle-right,
+        .small-r-wrapper .horizontal-tiny-line .circle,
+        .small-r-wrapper .horizontal-tiny-line .left-line {
+            border-color: #fff;
+        }
+        
+        .small-r-wrapper .small-triangle {
+            border-color: #000;
+        }
+        
+        .small-r-wrapper .big-triangle,
+        .small-r-wrapper .small-triangle,
+        .small-r-wrapper .horizontal-tiny-line .triangle-left,
+        .small-r-wrapper .horizontal-tiny-line .triangle-right {
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        .small-r-wrapper .horizontal-tiny-line .left-line {
+            border-bottom-color: transparent;
+        }
+        
+        .small-r-wrapper .dark-rect,
+        .small-r-wrapper .big-circle {
+            background: #000;
+        }
+        
+        .small-r-wrapper .horizontal-tiny-line .circle {
+            background: #fff;
+        }
+        /*.small-r-wrapper .big-circle {
+            border: 4px solid #fff;
+            border-radius: 50%;
+            border-top-left-radius: 0;
+            height: 73px;
+            width: 79px;
+            position: absolute;
+            left: 3px;
+        }
+        
+        .small-r-wrapper .middle-circle {
+            border: 1px solid #fff;
+            border-left-color: transparent;
+            border-radius: 50%;
+            height: 53px;
+            width: 59px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+        
+        .small-r-wrapper .big-triangle {
+            border: 29px solid #fff;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 19px;
+            border-bottom-width: 19px;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+        }
+        
+        .small-r-wrapper .small-triangle {
+            border: 28px solid #000;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 18px;
+            border-bottom-width: 18px;
+            position: absolute;
+            top: 8px;
+            left: 7px;
+        }*/
+        
+        .small-r-wrapper .big-circle {
+            border-top-left-radius: 0;
+        }
+        
+        .small-r-wrapper .small-circle {
+            border: 1px solid #fff;
+            background: #fff;
+            border-radius: 50%;
+            height: 13px;
+            width: 13px;
+            position: absolute;
+            left: -31px;
+            top: -6px;
+            z-index: 11;
+        }
+        /* .small-r-wrapper .horizontal-tiny-line .triangle-left,
+        .small-r-wrapper .horizontal-tiny-line .triangle-right {
+            border: 8px solid #fff;
+            border-left-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 4px;
+            border-bottom-width: 4px;
+            position: absolute;
+            top: 10px;
+        }
+        
+        .small-r-wrapper .horizontal-tiny-line .triangle-left {
+            left: 8px;
+        }
+        
+        .small-r-wrapper .horizontal-tiny-line .triangle-right {
+            left: 16px;
+        }
+        
+        .small-r-wrapper .horizontal-tiny-line .circle {
+            position: absolute;
+            top: 12px;
+            left: 25px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #fff;
+        }
+        
+        .small-r-wrapper .horizontal-tiny-line .left-line {
+            border: 1px solid #fff;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: 13px;
+            width: 5px;
+            left: 5px;
+        }
+        
+        .small-r-wrapper .horizontal-tiny-line .right-line {
+            left: 30px;
+        }
+        
+        .small-r-wrapper .horizontal-tiny-line {
+            position: absolute;
+            top: 12px;
+            left: 29px;
+        }*/
+        
+        .small-r-wrapper .vertical-small-line {
+            border: 2px solid #fff;
+            position: absolute;
+            height: 44px;
+            right: 3px;
+            bottom: 0;
+            transform: rotate(-30deg) translateY(-3px) translateX(-10px);
+        }
+        
+        .small-r-wrapper .horizontal-left-bottom-line,
+        .small-r-wrapper .horizontal-right-bottom-line,
+        .small-r-wrapper .horizontal-left-top-line {
+            border: 2px solid #fff;
+            position: absolute;
+            width: 18px;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .small-r-wrapper .horizontal-right-bottom-line {
+            left: 76px;
+        }
+        
+        .small-r-wrapper .horizontal-left-top-line {
+            bottom: auto;
+        }
+        
+        .small-r-wrapper .vertical-tiny-line .triangle-top,
+        .small-r-wrapper .vertical-tiny-line .triangle-bottom {
+            border: 8px solid #fff;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 4px;
+            border-left-width: 4px;
+            position: absolute;
+            top: 10px;
+            left: 4px;
+        }
+        
+        .small-r-wrapper .vertical-tiny-line .triangle-bottom {
+            top: 18px;
+        }
+        
+        .small-r-wrapper .vertical-tiny-line .line {
+            border: 1px solid #fff;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: -69px;
+            left: 8px;
+            height: 111px;
+        }
+        
+        .small-r-wrapper .vertical-tiny-line .circle {
+            position: absolute;
+            top: 4px;
+            left: 6px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #fff;
+        }
+        
+        .small-r-wrapper .vertical-tiny-line {
+            position: absolute;
+            top: 73px;
+            left: 5px;
+        }
+        
+        .small-r-wrapper .vertical-short-tiny-line .triangle-top,
+        .small-r-wrapper .vertical-short-tiny-line .triangle-bottom {
+            border: 8px solid #fff;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 4px;
+            border-left-width: 4px;
+            position: absolute;
+            top: 10px;
+            left: 4px;
+        }
+        
+        .small-r-wrapper .vertical-short-tiny-line .triangle-bottom {
+            top: 18px;
+        }
+        
+        .small-r-wrapper .vertical-short-tiny-line .line {
+            border: 1px solid #fff;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: -6px;
+            left: 8px;
+            height: 50px;
+        }
+        
+        .small-r-wrapper .vertical-short-tiny-line .circle {
+            position: absolute;
+            top: 4px;
+            left: 6px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #fff;
+        }
+        
+        .small-r-wrapper .vertical-short-tiny-line {
+            position: absolute;
+            bottom: 39px;
+            left: 75px;
+            transform: rotate(-30deg) translateY(-3px) translateX(-10px);
+        }
+        
+        .small-o-wrapper {
+            position: absolute;
+            top: -3px;
+            left: 56px;
+            height: 120px;
+            width: 90px;
+            transform: scale(0.24);
+        }
+        
+        .small-o-wrapper .main-circle {
+            background: #000;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            height: 112px;
+            width: 112px;
+        }
+        
+        .small-o-wrapper .inner-circle {
+            background: #000;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            height: 104px;
+            width: 104px;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+        }
+        
+        .small-o-wrapper .vertical-right-line .line,
+        .small-o-wrapper .vertical-left-line .line {
+            border: 1px solid #fff;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: 28px;
+            left: 12px;
+            height: 64px;
+        }
+        
+        .small-o-wrapper .vertical-right-line .triangle-top,
+        .small-o-wrapper .vertical-right-line .triangle-bottom,
+        .small-o-wrapper .vertical-left-line .triangle-top,
+        .small-o-wrapper .vertical-left-line .triangle-bottom {
+            border: 16px solid #fff;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 8px;
+            border-left-width: 8px;
+            position: absolute;
+            top: 6px;
+            left: 4px;
+        }
+        
+        .small-o-wrapper .vertical-right-line .triangle-bottom,
+        .small-o-wrapper .vertical-left-line .triangle-bottom {
+            top: 14px;
+        }
+        
+        .small-o-wrapper .vertical-right-line .circle,
+        .small-o-wrapper .vertical-left-line .circle {
+            position: absolute;
+            top: 0;
+            left: 9px;
+            width: 2px;
+            height: 2px;
+            border: 2px transparent solid;
+            border-radius: 50%;
+            background: #fff;
+        }
+        
+        .small-o-wrapper .vertical-right-line {
+            position: absolute;
+            top: 6px;
+            right: 45px;
+        }
+        
+        .small-o-wrapper .vertical-left-line {
+            position: absolute;
+            top: 6px;
+            left: 20px;
+        }
+        
+        .small-o-wrapper .center-circle {
+            position: absolute;
+            bottom: 9px;
+            left: 43px;
+            width: 2px;
+            height: 2px;
+            border: 9px transparent solid;
+            border-radius: 50%;
+            background: #fff;
+        }
+        
+        .g-wrapper {
+            position: absolute;
+            top: 475px;
+            left: 51px;
+            height: 120px;
+            width: 90px;
+            transform: scale(1.37);
+        }
+        
+        .g-wrapper .main-circle,
+        .g-wrapper .second-circle {
+            background: transparent;
+            border: 4px solid #d61800;
+            border-radius: 50%;
+            border-right-color: transparent;
+            height: 112px;
+            width: 112px;
+            transform: rotate(-24deg);
+            position: absolute;
+        }
+        
+        .g-wrapper .second-circle {
+            transform: rotate(0);
+        }
+        
+        .g-wrapper .middle-circle {
+            background: transparent;
+            border: 2px solid #d61800;
+            border-radius: 50%;
+            height: 52px;
+            width: 52px;
+            position: absolute;
+            top: 33px;
+            left: 33px;
+        }
+        
+        .g-wrapper .small-circle {
+            background: #d61800;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            border-right-color: transparent;
+            height: 27px;
+            width: 27px;
+            position: absolute;
+            top: 47px;
+            left: 46px;
+        }
+        
+        .g-wrapper .triangle-left,
+        .g-wrapper .triangle-right {
+            border: 12px solid #d61800;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 7px;
+            border-bottom-width: 7px;
+            position: absolute;
+            left: 0;
+        }
+        
+        .g-wrapper .triangle-right {
+            left: 10px;
+        }
+        
+        .g-wrapper .line {
+            border: 1px solid #d61800;
+            position: absolute;
+            left: 21px;
+            top: 6px;
+            width: 103px;
+        }
+        
+        .g-wrapper .horizontal-block-1,
+        .g-wrapper .horizontal-block-2 {
+            position: absolute;
+            top: 77px;
+            z-index: 10;
+            transform: scale(-1);
+            left: 120px;
+        }
+        
+        .g-wrapper .horizontal-block-2 {
+            top: 59px;
+        }
+        
+        .g-wrapper .dark-line {
+            height: 17px;
+            width: 66px;
+            background: #00283c;
+            position: absolute;
+            top: 52px;
+            left: 24px;
+        }
+        
+        .r-wrapper {
+            position: absolute;
+            top: 475px;
+            left: 243px;
+            height: 120px;
+            width: 90px;
+            transform: scale(1.37);
+        }
+        
+        .r-wrapper .vertical-white-line {
+            border: 2px solid #d61800;
+            position: absolute;
+            height: 116px;
+            left: 3px;
+        }
+        
+        .r-wrapper .vertical-black-line {
+            border: 3px solid #00283c;
+            position: absolute;
+            height: 109px;
+            left: 7px;
+            top: 4px;
+        }
+        /*.r-wrapper .big-circle {
+            border: 4px solid #d61800;
+            border-radius: 50%;
+            border-top-left-radius: 0;
+            height: 78px;
+            width: 79px;
+            position: absolute;
+            left: 3px;
+        }
+        
+        .r-wrapper .middle-circle {
+            border: 1px solid #d61800;
+            border-left-color: transparent;
+            border-radius: 50%;
+            height: 62px;
+            width: 64px;
+            position: absolute;
+            left: 6px;
+            top: 8px;
+        }
+        
+        .r-wrapper .big-triangle {
+            border: 29px solid #d61800;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 19px;
+            border-bottom-width: 19px;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+        }
+        
+        .r-wrapper .small-triangle {
+            border: 28px solid #00283c;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 18px;
+            border-bottom-width: 18px;
+            position: absolute;
+            top: 8px;
+            left: 7px;
+        }*/
+        
+        .r-wrapper .big-circle {
+            border-top-left-radius: 0;
+        }
+        
+        .r-wrapper .small-circle {
+            border: 1px solid #d61800;
+            background: #d61800;
+            border-radius: 50%;
+            height: 13px;
+            width: 13px;
+            position: absolute;
+            left: -31px;
+            top: -6px;
+            z-index: 11;
+        }
+        /*.r-wrapper .horizontal-tiny-line .triangle-left,
+        .r-wrapper .horizontal-tiny-line .triangle-right {
+            border: 8px solid #d61800;
+            border-left-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 4px;
+            border-bottom-width: 4px;
+            position: absolute;
+            top: 10px;
+        }
+        
+        .r-wrapper .horizontal-tiny-line .triangle-left {
+            left: 8px;
+        }
+        
+        .r-wrapper .horizontal-tiny-line .triangle-right {
+            left: 16px;
+        }
+        
+        .r-wrapper .horizontal-tiny-line .circle {
+            position: absolute;
+            top: 12px;
+            left: 25px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d61800;
+        }
+        
+        .r-wrapper .horizontal-tiny-line .left-line {
+            border: 1px solid #d61800;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: 13px;
+            width: 5px;
+            left: 5px;
+        }
+        
+        .r-wrapper .horizontal-tiny-line .right-line {
+            left: 30px;
+        }
+        
+        .r-wrapper .horizontal-tiny-line {
+            position: absolute;
+            top: 12px;
+            left: 29px;
+        }*/
+        
+        .r-wrapper .vertical-small-line,
+        .r-wrapper .vertical-small-dark-line {
+            border: 2px solid #d61800;
+            position: absolute;
+            height: 41px;
+            right: 6px;
+            bottom: 0;
+            transform: rotate(-30deg) translateY(-3px) translateX(-10px);
+        }
+        
+        .r-wrapper .vertical-small-dark-line {
+            border: 1px solid transparent;
+            background: #00283c;
+            width: 6px;
+            right: -2px;
+            bottom: 2px;
+        }
+        
+        .r-wrapper .horizontal-left-bottom-line,
+        .r-wrapper .horizontal-right-bottom-line,
+        .r-wrapper .horizontal-left-top-line {
+            border: 2px solid #d61800;
+            position: absolute;
+            width: 18px;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .r-wrapper .horizontal-right-bottom-line {
+            left: 76px;
+        }
+        
+        .r-wrapper .horizontal-left-top-line {
+            bottom: auto;
+        }
+        
+        .r-wrapper .vertical-tiny-line .triangle-top,
+        .r-wrapper .vertical-tiny-line .triangle-bottom {
+            border: 8px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 4px;
+            border-left-width: 4px;
+            position: absolute;
+            top: 10px;
+            left: 4px;
+        }
+        
+        .r-wrapper .vertical-tiny-line .triangle-bottom {
+            top: 18px;
+        }
+        
+        .r-wrapper .vertical-tiny-line .line {
+            border: 1px solid #d61800;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: -77px;
+            left: 8px;
+            height: 111px;
+        }
+        
+        .r-wrapper .vertical-tiny-line .circle {
+            position: absolute;
+            top: 4px;
+            left: 6px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d61800;
+        }
+        
+        .r-wrapper .vertical-tiny-line {
+            position: absolute;
+            top: 80px;
+            left: 5px;
+        }
+        
+        .r-wrapper .vertical-short-tiny-line .triangle-top,
+        .r-wrapper .vertical-short-tiny-line .triangle-bottom {
+            border: 8px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 4px;
+            border-left-width: 4px;
+            position: absolute;
+            top: 10px;
+            left: 4px;
+        }
+        
+        .r-wrapper .vertical-short-tiny-line .triangle-bottom {
+            top: 18px;
+        }
+        
+        .r-wrapper .vertical-short-tiny-line .line {
+            border: 1px solid #d61800;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: -6px;
+            left: 8px;
+            height: 50px;
+        }
+        
+        .r-wrapper .vertical-short-tiny-line .circle {
+            position: absolute;
+            top: 4px;
+            left: 6px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d61800;
+        }
+        
+        .r-wrapper .vertical-short-tiny-line {
+            position: absolute;
+            bottom: 39px;
+            left: 75px;
+            transform: rotate(-30deg) translateY(-3px) translateX(-10px);
+        }
+        
+        .a-wrapper {
+            position: absolute;
+            top: 475px;
+            left: 400px;
+            height: 120px;
+            width: 90px;
+            transform: scale(1.37);
+        }
+        
+        .a-wrapper .large-triangle {
+            border: 120px solid #d61800;
+            border-top-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 60px;
+            border-left-width: 60px;
+            position: absolute;
+        }
+        
+        .a-wrapper .middle-triangle {
+            border: 108px solid #00283c;
+            border-top-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 54px;
+            border-left-width: 54px;
+            position: absolute;
+            bottom: 3px;
+            left: 6px;
+        }
+        
+        .a-wrapper .small-triangle {
+            border: 39px solid #d61800;
+            border-top-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 20px;
+            border-left-width: 20px;
+            position: absolute;
+            bottom: 20px;
+            left: 41px;
+        }
+        
+        .a-wrapper .triangle-left,
+        .triangle-right {
+            border: 12px solid #d61800;
+            border-right-width: 0;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-top-width: 7px;
+            border-bottom-width: 7px;
+            position: absolute;
+        }
+        
+        .a-wrapper .triangle-left {
+            left: 0;
+        }
+        
+        .a-wrapper .triangle-right {
+            left: 13px;
+        }
+        
+        .a-wrapper .line {
+            border: 1px solid #d61800;
+            position: absolute;
+            left: 21px;
+            top: 6px;
+            width: 80px;
+        }
+        
+        .a-wrapper .horizontal-block-1 {
+            position: absolute;
+            top: 32px;
+            z-index: 10;
+        }
+        
+        .a-wrapper .horizontal-block-2 {
+            position: absolute;
+            top: 49px;
+            z-index: 10;
+        }
+        
+        .p-wrapper.second {
+            top: 664px;
+            left: 242px;
+        }
+        
+        .h-wrapper {
+            position: absolute;
+            top: 664px;
+            left: 387px;
+            height: 120px;
+            width: 90px;
+            transform: scale(1.37);
+        }
+        
+        .h-wrapper .horizontal-1,
+        .h-wrapper .horizontal-2 {
+            border: 2px solid #d61800;
+            position: absolute;
+            top: 48px;
+            left: -1px;
+            width: 112px;
+        }
+        
+        .h-wrapper .horizontal-2 {
+            top: 64px;
+        }
+        
+        .h-wrapper .vertical-block-1 {
+            position: absolute;
+            top: 0;
+            left: 4px;
+        }
+        
+        .h-wrapper .vertical-block-2 {
+            position: absolute;
+            top: 0;
+            left: 22px;
+        }
+        
+        .h-wrapper .vertical-block-3 {
+            position: absolute;
+            top: 0;
+            right: 17px;
+        }
+        
+        .h-wrapper .vertical-block-4 {
+            position: absolute;
+            top: 0;
+            right: -2px;
+        }
+        
+        .h-wrapper .triangle-top,
+        .triangle-bottom {
+            border: 12px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 7px;
+            border-left-width: 7px;
+            position: absolute;
+        }
+        
+        .h-wrapper .triangle-top {
+            top: 0;
+        }
+        
+        .h-wrapper .triangle-bottom {
+            top: 13px;
+        }
+        
+        .h-wrapper .line {
+            border: 1px solid #d61800;
+            position: absolute;
+            top: 21px;
+            left: 6px;
+            height: 100px;
+        }
+        
+        .y2-wrapper {
+            position: absolute;
+            top: 664px;
+            left: 562px;
+            height: 120px;
+            width: 90px;
+            transform: scale(1.37);
+        }
+        
+        .y2-wrapper .triangle-top,
+        .y2-wrapper .triangle-bottom {
+            border: 8px solid #d61800;
+            border-bottom-width: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-right-width: 4px;
+            border-left-width: 4px;
+            position: absolute;
+            top: 10px;
+            left: 4px;
+        }
+        
+        .y2-wrapper .triangle-bottom {
+            top: 18px;
+        }
+        
+        .y2-wrapper .line {
+            border: 1px solid #d61800;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            top: -9px;
+            left: 8px;
+            height: 55px;
+        }
+        
+        .y2-wrapper .circle {
+            position: absolute;
+            top: 4px;
+            left: 6px;
+            width: 2px;
+            height: 2px;
+            border: 1px transparent solid;
+            border-radius: 50%;
+            background: #d61800;
+        }
+        
+        .y2-wrapper .vertical-top-left-line {
+            position: absolute;
+            top: 13px;
+            left: 14px;
+            transform: rotate(-37deg);
+        }
+        
+        .y2-wrapper .vertical-top-right-line {
+            position: absolute;
+            top: 4px;
+            right: 19px;
+            transform: rotate(37deg);
+        }
+        
+        .y2-wrapper .vertical-bottom-left-line,
+        .y2-wrapper .vertical-bottom-right-line {
+            position: absolute;
+            top: 74px;
+            left: 36px;
+        }
+        
+        .y2-wrapper .vertical-bottom-right-line {
+            left: 45px;
+        }
+        
+        .y2-wrapper .vertical-bottom-left-line .line,
+        .y2-wrapper .vertical-bottom-right-line .line {
+            height: 63px;
+            top: -17px;
+        }
+        
+        .y2-wrapper .left-horizontal-line,
+        .y2-wrapper .right-horizontal-line,
+        .y2-wrapper .bottom-horizontal-line {
+            border: 2px solid #d61800;
+            width: 20px;
+            position: absolute;
+            left: -2px;
+        }
+        
+        .y2-wrapper .right-horizontal-line {
+            right: -12px;
+            left: auto;
+        }
+        
+        .y2-wrapper .bottom-horizontal-line {
+            bottom: -2px;
+            left: 37px;
+        }
+        
+        .y2-wrapper .bold-line {
+            border: 2px solid #d61800;
+            height: 71px;
+            position: absolute;
+        }
+        
+        .y2-wrapper .vertical-top-left-line .bold-line {
+            top: -13px;
+            left: -3px;
+        }
+        
+        .y2-wrapper .vertical-top-right-line .bold-line {
+            left: 15px;
+            top: -17px;
+        }
+        
+        .y2-wrapper .vertical-top-left-line .dark-line {
+            border: 1px solid transparent;
+            height: 60px;
+            width: 7px;
+            background: #00283c;
+            position: absolute;
+            top: -4px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="g-wrapper">
-        <div class="main-circle"></div>
-        <div class="vertical-top-line"></div>
-        <div class="vertical-bottom-line"></div>
-        <div class="horizontal-line"></div>
-        <div class="second-main-circle"></div>
-        <div class="middle-circle"></div>
-        <div class="small-circle">
+    <div class="main-wrapper">
+        <div class="large-g-wrapper">
+            <div class="main-circle"></div>
+            <div class="vertical-top-line"></div>
+            <div class="vertical-bottom-line"></div>
+            <div class="horizontal-line"></div>
+            <div class="second-main-circle"></div>
+            <div class="middle-circle"></div>
+            <div class="small-circle">
+                <div class="dark-rect"></div>
+            </div>
+            <div class="vertical-tiny-line">
+                <div class="top-line"></div>
+                <div class="circle"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="bottom-line"></div>
+            </div>
+        </div>
+
+        <div class="t-wrapper">
+            <div class="horizontal-line"></div>
+            <div class="horizontal-tiny-line">
+                <div class="left-line"></div>
+                <div class="triangle-left"></div>
+                <div class="triangle-right"></div>
+                <div class="circle"></div>
+                <div class="right-line"></div>
+            </div>
+            <div class="dark-line"></div>
+            <div class="small-left-line"></div>
+            <div class="small-right-line"></div>
+            <div class="vertical-bold-line"></div>
             <div class="dark-rect"></div>
+            <div class="large-triangle"></div>
+            <div class="middle-triangle"></div>
+            <div class="small-triangle"></div>
+            <div class="vertical-tiny-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="horizontal-bottom-line"></div>
         </div>
-        <div class="vertical-tiny-line">
-            <div class="top-line"></div>
-            <div class="circle"></div>
-            <div class="triangle-top"></div>
-            <div class="triangle-bottom"></div>
-            <div class="bottom-line"></div>
+
+
+        <div class="y1-wrapper">
+            <div class="large-triangle"></div>
+            <div class="middle-triangle"></div>
+            <div class="small-triangle"></div>
+            <div class="vertical-block-1">
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="line"></div>
+            </div>
+            <div class="vertical-block-2">
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="line"></div>
+            </div>
         </div>
-    </div>
+
+        <div class="p-wrapper">
+            <div class="big-circle">
+                <div class="dark-rect"></div>
+                <div class="middle-circle">
+                    <div class="big-triangle"></div>
+                    <div class="small-triangle"></div>
+                    <div class="smallest-triangle"></div>
+                    <div class="horizontal-tiny-line">
+                        <div class="left-line"></div>
+                        <div class="triangle-left"></div>
+                        <div class="triangle-right"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="vertical-white-line"></div>
+            <div class="vertical-black-line"></div>
+
+            <div class="vertical-tiny-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+
+            <div class="horizontal-left-bottom-line"></div>
+            <div class="horizontal-left-top-line"></div>
+        </div>
+
+        <div class="o-wrapper">
+            <div class="z-wrapper">
+                <div class="horizontal-top-line"></div>
+                <div class="top-triangle">
+                    <div class="large-triangle"></div>
+                    <div class="middle-triangle"></div>
+                    <div class="small-triangle"></div>
+                </div>
+                <div class="bottom-triangle">
+                    <div class="large-triangle"></div>
+                    <div class="middle-triangle"></div>
+                    <div class="small-triangle"></div>
+                </div>
+                <div class="top-tiny-line">
+                    <div class="left-line"></div>
+                    <div class="triangle-left"></div>
+                    <div class="triangle-right"></div>
+                </div>
+                <div class="bottom-tiny-line">
+                    <div class="left-line"></div>
+                    <div class="triangle-left"></div>
+                    <div class="triangle-right"></div>
+                </div>
+                <div class="horizontal-bottom-line"></div>
+            </div>
+            <div class="e-wrapper">
+                <div class="horizontal-top-line"></div>
+                <div class="vertical-line"></div>
+                <div class="small-top-line"></div>
+                <div class="small-middle-line"></div>
+                <div class="small-bottom-line"></div>
+                <div class="middle-line"></div>
+                <div class="top-triangle">
+                    <div class="large-triangle"></div>
+                    <div class="middle-triangle"></div>
+                    <div class="small-triangle"></div>
+                </div>
+                <div class="bottom-triangle">
+                    <div class="large-triangle"></div>
+                    <div class="middle-triangle"></div>
+                    <div class="small-triangle"></div>
+                </div>
+                <div class="horizontal-bottom-line"></div>
+            </div>
+            <div class="small-r-wrapper">
+                <div class="big-circle">
+                    <div class="dark-rect"></div>
+                    <div class="middle-circle">
+                        <div class="big-triangle"></div>
+                        <div class="small-triangle">
+                            <div class="small-circle"></div>
+                        </div>
+                        <div class="horizontal-tiny-line">
+                            <div class="left-line"></div>
+                            <div class="triangle-left"></div>
+                            <div class="triangle-right"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="vertical-white-line"></div>
+                <div class="vertical-black-line"></div>
+                <div class="vertical-small-line"></div>
+
+                <div class="vertical-tiny-line">
+                    <div class="line"></div>
+                    <div class="triangle-top"></div>
+                    <div class="triangle-bottom"></div>
+                    <div class="circle"></div>
+                </div>
+
+                <div class="vertical-short-tiny-line">
+                    <div class="line"></div>
+                    <div class="triangle-top"></div>
+                    <div class="triangle-bottom"></div>
+                    <div class="circle"></div>
+                </div>
+
+                <div class="horizontal-left-bottom-line"></div>
+                <div class="horizontal-right-bottom-line"></div>
+                <div class="horizontal-left-top-line"></div>
+            </div>
+            <div class="small-o-wrapper">
+                <div class="main-circle"></div>
+                <div class="inner-circle">
+                    <div class="vertical-right-line">
+                        <div class="line"></div>
+                        <div class="triangle-top"></div>
+                        <div class="triangle-bottom"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="vertical-left-line">
+                        <div class="line"></div>
+                        <div class="triangle-top"></div>
+                        <div class="triangle-bottom"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="center-circle"></div>
+                </div>
+            </div>
+            <div class="white-line"></div>
+            <span class="text">TYPEFACE</span>
+        </div>
+        <div class="g-wrapper">
+            <div class="main-circle"></div>
+            <div class="second-circle"></div>
+            <div class="middle-circle"></div>
+            <div class="horizontal-block-1">
+                <div class="triangle-left"></div>
+                <div class="triangle-right"></div>
+                <div class="line"></div>
+            </div>
+            <div class="dark-line"></div>
+            <div class="horizontal-block-2">
+                <div class="triangle-left"></div>
+                <div class="triangle-right"></div>
+                <div class="line"></div>
+            </div>
+            <div class="small-circle"></div>
+        </div>
+        <div class="r-wrapper">
+            <div class="big-circle">
+                <div class="middle-circle">
+                    <div class="big-triangle"></div>
+                    <div class="small-triangle">
+                        <div class="small-circle"></div>
+                    </div>
+                    <div class="horizontal-tiny-line">
+                        <div class="left-line"></div>
+                        <div class="triangle-left"></div>
+                        <div class="triangle-right"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="big-circle">
+                <div class="dark-rect"></div>
+                <div class="middle-circle">
+                    <div class="big-triangle"></div>
+                    <div class="small-triangle">
+                        <div class="small-circle"></div>
+                    </div>
+                    <div class="horizontal-tiny-line">
+                        <div class="left-line"></div>
+                        <div class="triangle-left"></div>
+                        <div class="triangle-right"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="vertical-white-line"></div>
+            <div class="vertical-black-line"></div>
+            <div class="vertical-small-line"></div>
+            <div class="vertical-small-dark-line"></div>
+
+            <div class="vertical-tiny-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+
+            <div class="vertical-short-tiny-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+
+            <div class="horizontal-left-bottom-line"></div>
+            <div class="horizontal-right-bottom-line"></div>
+            <div class="horizontal-left-top-line"></div>
+        </div>
+        <div class="a-wrapper">
+            <div class="horizontal-block-1">
+                <div class="triangle-left"></div>
+                <div class="triangle-right"></div>
+                <div class="line"></div>
+            </div>
+            <div class="horizontal-block-2">
+                <div class="triangle-left"></div>
+                <div class="triangle-right"></div>
+                <div class="line"></div>
+            </div>
+            <div class="large-triangle"></div>
+            <div class="middle-triangle"></div>
+            <div class="small-triangle"></div>
+        </div>
+        <div class="p-wrapper second">
+            <div class="big-circle">
+                <div class="dark-rect"></div>
+                <div class="middle-circle">
+                    <div class="big-triangle"></div>
+                    <div class="small-triangle"></div>
+                    <div class="smallest-triangle"></div>
+                    <div class="horizontal-tiny-line">
+                        <div class="left-line"></div>
+                        <div class="triangle-left"></div>
+                        <div class="triangle-right"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="vertical-white-line"></div>
+            <div class="vertical-black-line"></div>
+
+            <div class="vertical-tiny-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+
+            <div class="horizontal-left-bottom-line"></div>
+            <div class="horizontal-left-top-line"></div>
+        </div>
+        <div class="h-wrapper">
+            <div class="horizontal-1"></div>
+            <div class="horizontal-2"></div>
+            <div class="vertical-block-1">
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="line"></div>
+            </div>
+            <div class="vertical-block-2">
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="line"></div>
+            </div>
+            <div class="vertical-block-3">
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="line"></div>
+            </div>
+            <div class="vertical-block-4">
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="y2-wrapper">
+
+            <div class="left-horizontal-line"></div>
+            <div class="right-horizontal-line"></div>
+            <div class="bottom-horizontal-line"></div>
+            <div class="vertical-top-left-line">
+                <div class="dark-line"></div>
+                <div class="bold-line"></div>
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="vertical-top-right-line">
+                <div class="bold-line"></div>
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="vertical-bottom-left-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="vertical-bottom-right-line">
+                <div class="line"></div>
+                <div class="triangle-top"></div>
+                <div class="triangle-bottom"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
     </div>
 </body>
 
