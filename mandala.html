@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .circle-1,
+        .circle-2 {
+            position: absolute;
+            height: 500px;
+            width: 500px;
+            border: 1px solid black;
+            border-radius: 50%;
+            top: 200px;
+            left: 200px;
+            background: orange;
+        }
+        
+        .circle-2 {
+            height: 400px;
+            width: 400px;
+            top: 50px;
+            left: 50px;
+            background: transparent;
+        }
+        
+        .circle-3 {
+            position: absolute;
+            height: 300px;
+            width: 300px;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            top: 100px;
+            left: 100px;
+        }
+        
+        .center {
+            margin: 0 auto;
+            height: 2px;
+            width: 2px;
+            background: black;
+        }
+        
+        .red-item,
+        .blue-item {
+            height: 176px;
+            width: 176px;
+            border: 1px solid black;
+            border-radius: 0 134px;
+            display: inline-block;
+            transform-origin: left top;
+            position: absolute;
+            top: 250px;
+            left: 250px;
+            z-index: 1;
+            background: rgba(255, 0, 0, 0.3);
+        }
+        
+        .blue-item {
+            background: rgba(0, 255, 255, 0.3);
+            z-index: 0
+        }
+        
+        .small-blue-item {
+            height: 75px;
+            width: 75px;
+            border: 1px solid black;
+            border-radius: 0 73px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 255, 0.3);
+        }
+        
+        .red-item:nth-child(1) {
+            transform: rotate(calc(30deg*1));
+        }
+        
+        .red-item:nth-child(2) {
+            transform: rotate(calc(30deg*2));
+        }
+        
+        .red-item:nth-child(3) {
+            transform: rotate(calc(30deg*3));
+        }
+        
+        .red-item:nth-child(4) {
+            transform: rotate(calc(30deg*4));
+        }
+        
+        .red-item:nth-child(5) {
+            transform: rotate(calc(30deg*5));
+        }
+        
+        .red-item:nth-child(6) {
+            transform: rotate(calc(30deg*6));
+        }
+        
+        .red-item:nth-child(7) {
+            transform: rotate(calc(30deg*7));
+        }
+        
+        .red-item:nth-child(8) {
+            transform: rotate(calc(30deg*8));
+        }
+        
+        .red-item:nth-child(9) {
+            transform: rotate(calc(30deg*9));
+        }
+        
+        .red-item:nth-child(10) {
+            transform: rotate(calc(30deg*10));
+        }
+        
+        .red-item:nth-child(11) {
+            transform: rotate(calc(30deg*11));
+        }
+        
+        .blue-item:nth-child(13) {
+            transform: rotate(calc(15deg + calc(30deg*1)));
+        }
+        
+        .blue-item:nth-child(14) {
+            transform: rotate(calc(15deg + calc(30deg*2)));
+        }
+        
+        .blue-item:nth-child(15) {
+            transform: rotate(calc(15deg + calc(30deg*3)));
+        }
+        
+        .blue-item:nth-child(16) {
+            transform: rotate(calc(15deg + calc(30deg*4)));
+        }
+        
+        .blue-item:nth-child(17) {
+            transform: rotate(calc(15deg + calc(30deg*5)));
+        }
+        
+        .blue-item:nth-child(18) {
+            transform: rotate(calc(15deg + calc(30deg*6)));
+        }
+        
+        .blue-item:nth-child(19) {
+            transform: rotate(calc(15deg + calc(30deg*7)));
+        }
+        
+        .blue-item:nth-child(20) {
+            transform: rotate(calc(15deg + calc(30deg*8)));
+        }
+        
+        .blue-item:nth-child(21) {
+            transform: rotate(calc(15deg + calc(30deg*9)));
+        }
+        
+        .blue-item:nth-child(22) {
+            transform: rotate(calc(15deg + calc(30deg*10)));
+        }
+        
+        .blue-item:nth-child(23) {
+            transform: rotate(calc(15deg + calc(30deg*11)));
+        }
+        
+        .blue-item:nth-child(24) {
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle-1">
+        <div class="red-items">
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+            <div class="red-item">
+                <div class="small-blue-item"></div>
+            </div>
+
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+            <div class="blue-item"></div>
+        </div>
+
+        <div class="circle-2">
+
+
+        </div>
+        <div class="circle-3">
+            <div class="center"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
